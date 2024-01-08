@@ -2,7 +2,7 @@ import java.io.File;
 
 public class CheckLabConfig {
 	public static void checkConfig(boolean isWindows) {
-		String repoVariableName = "REPO_DIR";
+		String repoVariableName = "CS61B_SP21_REPO_DIR";
 		String repoDir = System.getenv(repoVariableName);
 		checkVariableNotNull(repoDir, repoVariableName);
 		System.out.println("Validating your " + repoVariableName + 
@@ -10,7 +10,7 @@ public class CheckLabConfig {
 			               repoDir);
 		checkIsValidRepo(repoDir, repoVariableName, isWindows, false);
 
-		String snapsVariableName = "SNAPS_DIR";
+		String snapsVariableName = "CS61B_SP21_SNAPS_DIR";
 		String snapsRepoDir = System.getenv(snapsVariableName);
 
 		checkVariableNotNull(snapsRepoDir, snapsVariableName);
@@ -46,11 +46,11 @@ public class CheckLabConfig {
 		String expected;
 
 		if (!snapsCheck) {
-			pattern = "sp21-s[\\d]+";
-			expected = "sp21-s1234";
+			pattern = "cs61b-sp21";
+			expected = "cs61b-sp21";
 		} else {
-			pattern = "snaps-sp21-s[\\d]+";
-			expected = "snaps-sp21-s1234";
+			pattern = "snaps-cs61b-sp21";
+			expected = "snaps-cs61b-sp21";
 		}
 
 		if (!folderName.matches(pattern)) {
